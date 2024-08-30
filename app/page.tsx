@@ -1,33 +1,66 @@
-import Image from "next/image"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { Star, MapPin, Phone, Mail } from "lucide-react"
-import Banner from "../public/images/banner.png" 
+import Image from 'next/image'
+
+import { Button } from '@/components/ui/button'
+import { Card, CardContent } from '@/components/ui/card'
+import { Star, MapPin, Phone, Mail } from 'lucide-react'
+import Banner from '../public/images/banner_people.jpg'
 
 export default function Component() {
   return (
     <div className="flex flex-col min-h-screen">
-      <header className="relative w-full h-[60vh]">
+      <header className="relative w-full h-[90vh]">
         <Image
           src={Banner}
           alt="Cleaning service banner"
           layout="fill"
           objectFit="cover"
-          className="brightness-50"
+          // className="brightness-50"
         />
-        <div className="absolute inset-0 flex flex-col items-center justify-center text-white">
-          <h1 className="text-4xl md:text-6xl font-bold mb-4">SparkleClean Services</h1>
-          <p className="text-xl md:text-2xl mb-8">Professional Cleaning for Your Home and Office</p>
-          <Button size="lg" className="text-lg">
+        <div className="absolute inset-0 flex flex-col items-center justify-center text-white pt-44">
+          {/* <h1 className="text-4xl md:text-6xl font-bold mb-4">
+            SparkleClean Services
+          </h1>
+          <p className="text-xl md:text-2xl mb-8">
+            Professional Cleaning for Your Home and Office
+          </p> */}
+          <Button size="lg" className="text-lg bg-[#b6ffa1] hover:bg-[#b6ffa1] text-black">
             Book Now
           </Button>
+        </div>
+        <div className="animate-logo-container">
+          <img
+            src='images/second.svg'
+            alt="Second part of logo"
+            height="48"
+            className="animate-move-text-left"
+          />
+          <img
+            src='images/friend.svg'
+            alt="Friend part of logo"
+            height="48"
+            className="animate-move-text-right"
+          />
+          <img
+            src='images/circle.svg'
+            alt="Circle Blue part of logo"
+            height="108"
+            className="animate-move-circle-left"
+          />
+          <img
+            src='images/border_circle.svg'
+            alt="Circle Clear part of logo"
+            height="108"
+            className="animate-move-circle-right"
+          />
         </div>
       </header>
 
       <main className="flex-grow">
         <section className="py-16 bg-gray-100">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-8">Our Trusted Partners</h2>
+            <h2 className="text-3xl font-bold text-center mb-8">
+              Our Trusted Partners
+            </h2>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-8">
               {[1, 2, 3, 4].map((partner) => (
                 <div key={partner} className="flex items-center justify-center">
@@ -46,27 +79,35 @@ export default function Component() {
 
         <section className="py-16">
           <div className="container mx-auto px-4">
-            <h2 className="text-3xl font-bold text-center mb-8">What Our Customers Say</h2>
+            <h2 className="text-3xl font-bold text-center mb-8">
+              What Our Customers Say
+            </h2>
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
               {[
                 {
-                  name: "Alice Johnson",
-                  comment: "SparkleClean transformed my home! Their attention to detail is impressive.",
+                  name: 'Alice Johnson',
+                  comment:
+                    'SparkleClean transformed my home! Their attention to detail is impressive.',
                 },
                 {
-                  name: "Bob Smith",
-                  comment: "Reliable and professional. I've been using their services for years.",
+                  name: 'Bob Smith',
+                  comment:
+                    "Reliable and professional. I've been using their services for years.",
                 },
                 {
-                  name: "Carol Davis",
-                  comment: "The team is always punctual and thorough. Highly recommended!",
+                  name: 'Carol Davis',
+                  comment:
+                    'The team is always punctual and thorough. Highly recommended!',
                 },
               ].map((testimonial, index) => (
                 <Card key={index}>
                   <CardContent className="p-6">
                     <div className="flex mb-4">
                       {[1, 2, 3, 4, 5].map((star) => (
-                        <Star key={star} className="text-yellow-400 fill-current" />
+                        <Star
+                          key={star}
+                          className="text-yellow-400 fill-current"
+                        />
                       ))}
                     </div>
                     <p className="mb-4">"{testimonial.comment}"</p>
@@ -85,7 +126,9 @@ export default function Component() {
               <div className="flex flex-col items-center">
                 <MapPin className="w-12 h-12 mb-4" />
                 <h3 className="text-xl font-semibold mb-2">Address</h3>
-                <p className="text-center">123 Clean Street, Sparkle City, SC 12345</p>
+                <p className="text-center">
+                  123 Clean Street, Sparkle City, SC 12345
+                </p>
               </div>
               <div className="flex flex-col items-center">
                 <Phone className="w-12 h-12 mb-4" />
